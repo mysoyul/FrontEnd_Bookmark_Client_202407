@@ -2,6 +2,7 @@ import React from 'react';
 
 import { BookmarksResponse } from '@/types';
 import Bookmark from '@/app/components/Bookmark';
+import Pagination from '@/app/components/Pagination';
 
 type Props = {
     bookmarks: BookmarksResponse
@@ -10,7 +11,7 @@ type Props = {
 const Bookmarks: React.FC<Props> = ({bookmarks}) => {
     return (
         <div>
-            <h1>Welcome to Bookmarker</h1>
+            <Pagination bookmarks={bookmarks} />
             {
                 bookmarks.data.map(
                     bookmark => <Bookmark key={bookmark.id} bookmark={bookmark} />
