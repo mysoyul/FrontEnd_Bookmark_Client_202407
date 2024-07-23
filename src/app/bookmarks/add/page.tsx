@@ -30,14 +30,13 @@ const AddBookmarkPage = () => {
 
     try {
       const response = await saveBookmark(payload);
-      console.log("SaveBookmark response: ", response);
       setMessage("Bookmark saved successfully");  
       await router.push(`/bookmarks`);
       router.refresh();
     } catch (error) {
       console.log('등록 실패!!!!')  
       console.log(error);
-      setMessage("Bookmark saved fail");  
+      setMessage("Bookmark saved failed");  
     }
 
     setTitle("");
